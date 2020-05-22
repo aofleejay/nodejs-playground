@@ -50,15 +50,19 @@ Generate workload by using [`crypto.pbkdf2`](https://nodejs.org/api/crypto.html#
 
 The second request (~20 second) have to wait until the first request (~10 second) finished.
 
+---
+
 If we fork two children by adding one more line of code `cluster.fork()`. The two requests will finish at almost same time.
 
 - First Request
 
-![multiple-child-second-request](result/multiple-child-second-request.png)
+![multiple-child-first-request](result/multiple-child-first-request.png)
 
 - Second Request
 
 ![multiple-child-second-request](result/multiple-child-second-request.png)
+
+---
 
 More simpler way we can use npm module call 'pm2' to create two process by get rid of if statement above and use command `pm2 start app.js -i 2`. The result should be same with two `cluster.fork()`.
 
