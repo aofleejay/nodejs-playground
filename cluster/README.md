@@ -52,7 +52,7 @@ The second request (~20 second) have to wait until the first request (~10 second
 
 ---
 
-If we fork two children by adding one more line of code `cluster.fork()`. The two requests will finish at almost same time.
+If we fork two child process by adding one more line of code `cluster.fork()`. The two requests will finish at almost same time.
 
 - First Request
 
